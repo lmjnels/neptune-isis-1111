@@ -18,9 +18,10 @@ jobs:
             sudo docker-php-ext-install zip
 
       - run:
-          name: "Create Environment file"
+          name: "Setup Environment"
           command: |
             mv .env.testing .env
+            touch ./storage/logs/laravel.log
 
       # Download and cache dependencies
       - restore_cache:
@@ -43,10 +44,25 @@ jobs:
           name: "Generate App key"
           command: php artisan key:generate
 
-      # run tests with phpunit
+      # Node
+      - restore_cache:
+          keys:
+            - node-v1-{{ checksum "package.json" }}
+            - node-v1-
       - run:
-          name: "Run Unit Tests"
-          command: ./vendor/bin/phpunit tests/Unit
+        name: Install Node Dependencies
+        command: |
+          node --version
+          npm --version
+          npm install
+      - save_cache:
+          key: node-v1-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+
+      - run:
+          name: Run npm build
+          command: npm run build
 
       - run:
           name: "Install Sqlite"
@@ -57,6 +73,11 @@ jobs:
           command: |
             touch database/database.sqlite
             php artisan migrate --force --env=testing
+
+      # run tests with phpunit
+      - run:
+          name: "Run Unit Tests"
+          command: ./vendor/bin/phpunit tests/Unit
 
       - run:
           name: "Run Http Tests"
