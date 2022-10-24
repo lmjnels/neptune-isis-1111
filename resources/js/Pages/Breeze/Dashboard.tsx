@@ -1,8 +1,8 @@
 import React from 'react';
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import AuthenticatedLayout from '../../Layouts/Breeze/AuthenticatedLayout';
 import { Head } from '@inertiajs/inertia-react';
 
-export default function Dashboard(props) {
+export default function Dashboard(props: any) {
     return (
         <AuthenticatedLayout
             auth={props.auth}

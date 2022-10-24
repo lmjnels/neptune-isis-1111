@@ -1,10 +1,10 @@
 import React, {SyntheticEvent, useEffect} from 'react';
-import Checkbox from '@/Components/Checkbox';
-import GuestLayout from '@/Layouts/GuestLayout';
-import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
+import Checkbox from '../../../Components/Breeze/Checkbox';
+import GuestLayout from '../../../Layouts/Breeze/GuestLayout';
+import InputError from '../../../Components/Breeze/InputError';
+import InputLabel from '../../../Components/Breeze/InputLabel';
+import PrimaryButton from '../../../Components/Breeze/PrimaryButton';
+import TextInput from '../../../Components/Breeze/TextInput';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
 
 type UserData = {

@@ -1,6 +1,6 @@
 import React from 'react';
-import GuestLayout from '@/Layouts/GuestLayout';
-import PrimaryButton from '@/Components/PrimaryButton';
+import GuestLayout from '../../../Layouts/Breeze/GuestLayout';
+import PrimaryButton from '../../../Components/Breeze/PrimaryButton';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
 
 export default function VerifyEmail({ status }: any) {

@@ -1,4 +1,4 @@
-import React, {ChangeEvent, SyntheticEvent, useEffect, useRef} from 'react';
+import React, {ChangeEvent, useEffect, useRef} from 'react';
 
 type TextInputType = {
     type: string;

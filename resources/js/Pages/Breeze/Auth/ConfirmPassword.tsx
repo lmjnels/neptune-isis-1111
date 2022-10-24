@@ -1,9 +1,9 @@
 import React, {SyntheticEvent, useEffect} from 'react';
-import GuestLayout from '@/Layouts/GuestLayout';
-import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
+import GuestLayout from '@/Layouts/Breeze/GuestLayout';
+import InputError from '@/Components/Breeze/InputError';
+import InputLabel from '@/Components/Breeze/InputLabel';
+import PrimaryButton from '@/Components/Breeze/PrimaryButton';
+import TextInput from '@/Components/Breeze/TextInput';
 import { Head, useForm } from '@inertiajs/inertia-react';
 
 export default function ConfirmPassword() {

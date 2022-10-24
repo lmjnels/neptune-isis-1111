@@ -1,4 +1,4 @@
-import React, {useState, useContext, Fragment, ChangeEvent} from 'react';
+import React, {useState, useContext, Fragment} from 'react';
 import { Link } from '@inertiajs/inertia-react';
 import { Transition } from '@headlessui/react';
 
