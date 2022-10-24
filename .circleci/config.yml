@@ -50,13 +50,13 @@ jobs:
 
       - run:
           name: "Install Sqlite"
-          command: sudo apt-get install php7.4-sqlite3
+          command: sudo apt-get install php8.1-sqlite3
 
       - run:
           name: "Create database and run migration"
           command: |
             touch database/database.sqlite
-            php artisan migrate --env=testing`
+            php artisan migrate --env=testing
 
       - run:
           name: "Run Http Tests"
