@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {SyntheticEvent, useEffect} from 'react';
 import Checkbox from '@/Components/Checkbox';
 import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
@@ -7,7 +7,13 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
 
-export default function Login({ status, canResetPassword }) {
+type UserData = {
+    email: string|HTMLInputElement;
+    password: string|HTMLInputElement;
+    remember?: any|HTMLInputElement;
+}
+
+export default function Login({ status, canResetPassword }: any) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: '',
         password: '',
@@ -20,11 +26,11 @@ export default function Login({ status, canResetPassword }) {
         };
     }, []);
 
-    const onHandleChange = (event) => {
-        setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value);
+    const onHandleChange = ({target}: any) => {
+        setData(target.name, target.type === 'checkbox' ? target.checked : target.value);
     };
 
-    const submit = (e) => {
+    const submit = (e: SyntheticEvent) => {
         e.preventDefault();
 
         post(route('login'));
@@ -48,6 +54,7 @@ export default function Login({ status, canResetPassword }) {
                         autoComplete="username"
                         isFocused={true}
                         handleChange={onHandleChange}
+                        required={true}
                     />
 
                     <InputError message={errors.email} className="mt-2" />
@@ -63,6 +70,8 @@ export default function Login({ status, canResetPassword }) {
                         className="mt-1 block w-full"
                         autoComplete="current-password"
                         handleChange={onHandleChange}
+                        required={true}
+                        isFocused={false}
                     />
 
                     <InputError message={errors.password} className="mt-2" />

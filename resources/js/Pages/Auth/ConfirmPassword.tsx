@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {SyntheticEvent, useEffect} from 'react';
 import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
@@ -17,11 +17,11 @@ export default function ConfirmPassword() {
         };
     }, []);
 
-    const onHandleChange = (event) => {
+    const onHandleChange = (event: any) => {
         setData(event.target.name, event.target.value);
     };
 
-    const submit = (e) => {
+    const submit = (e: SyntheticEvent) => {
         e.preventDefault();
 
         post(route('password.confirm'));

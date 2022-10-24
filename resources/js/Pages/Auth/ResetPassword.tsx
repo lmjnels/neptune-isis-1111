@@ -6,7 +6,7 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, useForm } from '@inertiajs/inertia-react';
 
-export default function ResetPassword({ token, email }) {
+export default function ResetPassword({ token, email }: any) {
     const { data, setData, post, processing, errors, reset } = useForm({
         token: token,
         email: email,
@@ -20,11 +20,11 @@ export default function ResetPassword({ token, email }) {
         };
     }, []);
 
-    const onHandleChange = (event) => {
+    const onHandleChange = (event: any) => {
         setData(event.target.name, event.target.value);
     };
 
-    const submit = (e) => {
+    const submit = (e: any) => {
         e.preventDefault();
 
         post(route('password.update'));

@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
+import route from "ziggy-js";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -20,11 +21,11 @@ export default function Register() {
         };
     }, []);
 
-    const onHandleChange = (event) => {
+    const onHandleChange = (event: any) => {
         setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value);
     };
 
-    const submit = (e) => {
+    const submit = (e: any) => {
         e.preventDefault();
 
         post(route('register'));
@@ -93,8 +94,7 @@ export default function Register() {
                         value={data.password_confirmation}
                         className="mt-1 block w-full"
                         handleChange={onHandleChange}
-                        required
-                    />
+                        required autoComplete={undefined} isFocused={undefined}                    />
 
                     <InputError message={errors.password_confirmation} className="mt-2" />
                 </div>

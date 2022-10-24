@@ -5,16 +5,16 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, useForm } from '@inertiajs/inertia-react';
 
-export default function ForgotPassword({ status }) {
+export default function ForgotPassword({ status }: any) {
     const { data, setData, post, processing, errors } = useForm({
         email: '',
     });
 
-    const onHandleChange = (event) => {
+    const onHandleChange = (event: any) => {
         setData(event.target.name, event.target.value);
     };
 
-    const submit = (e) => {
+    const submit = (e: any) => {
         e.preventDefault();
 
         post(route('password.email'));

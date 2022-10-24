@@ -1,4 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React, {ChangeEvent, SyntheticEvent, useEffect, useRef} from 'react';
+
+type TextInputType = {
+    type: string;
+    name: string;
+    value: string;
+    className: string;
+    autoComplete?: any;
+    required?: boolean,
+    isFocused?: boolean,
+    handleChange: any;
+}
 
 export default function TextInput({
     type = 'text',
@@ -6,10 +17,10 @@ export default function TextInput({
     value,
     className,
     autoComplete,
-    required,
-    isFocused,
+    required = true,
+    isFocused = false,
     handleChange,
-}) {
+}:TextInputType) {
     const input = useRef();
 
     useEffect(() => {
@@ -31,7 +42,7 @@ export default function TextInput({
                 ref={input}
                 autoComplete={autoComplete}
                 required={required}
-                onChange={(e) => handleChange(e)}
+                onChange={(e:ChangeEvent) => handleChange(e)}
             />
         </div>
     );

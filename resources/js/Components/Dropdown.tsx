@@ -1,10 +1,20 @@
-import React, { useState, useContext, Fragment } from 'react';
+import React, {useState, useContext, Fragment, ChangeEvent} from 'react';
 import { Link } from '@inertiajs/inertia-react';
 import { Transition } from '@headlessui/react';
 
-const DropDownContext = React.createContext();
+const DropDownContext = React.createContext<any>(null);
 
-const Dropdown = ({ children }) => {
+type ChildPropType = {
+    children?: React.ReactNode |JSX.Element|undefined
+}
+
+type DropDownContextType ={
+    open: boolean;
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    toggleOpen?: void;
+}
+
+const Dropdown = ({ children }: ChildPropType) => {
     const [open, setOpen] = useState(false);
 
     const toggleOpen = () => {
@@ -18,8 +28,8 @@ const Dropdown = ({ children }) => {
     );
 };
 
-const Trigger = ({ children }) => {
-    const { open, setOpen, toggleOpen } = useContext(DropDownContext);
+const Trigger = ({ children }: ChildPropType) => {
+    const { open, setOpen, toggleOpen }:any = useContext(DropDownContext);
 
     return (
         <>
@@ -30,8 +40,15 @@ const Trigger = ({ children }) => {
     );
 };
 
-const Content = ({ align = 'right', width = '48', contentClasses = 'py-1 bg-white', children }) => {
-    const { open, setOpen } = useContext(DropDownContext);
+type ContentType = {
+    align?: string;
+    width?: string;
+    contentClasses?: string;
+    children?: React.ReactNode;
+}
+
+const Content = ({ align = 'right', width = '48', contentClasses = 'py-1 bg-white', children }: ContentType) => {
+    const { open, setOpen }: any = useContext(DropDownContext);
 
     let alignmentClasses = 'origin-top';
 
@@ -63,14 +80,23 @@ const Content = ({ align = 'right', width = '48', contentClasses = 'py-1 bg-whit
                     className={`absolute z-50 mt-2 rounded-md shadow-lg ${alignmentClasses} ${widthClasses}`}
                     onClick={() => setOpen(false)}
                 >
-                    <div className={`rounded-md ring-1 ring-black ring-opacity-5 ` + contentClasses}>{children}</div>
+                    <div className={`rounded-md ring-1 ring-black ring-opacity-5 ` + contentClasses}>
+                        {children}
+                    </div>
                 </div>
             </Transition>
         </>
     );
 };
 
-const DropdownLink = ({ href, method = 'post', as = 'a', children }) => {
+type DropdownLinkType = {
+    href: string,
+    method: string,
+    as: string,
+    children?: React.ReactNode,
+}
+
+const DropdownLink = ({ href, method = 'post', as = 'a', children }: DropdownLinkType) => {
     return (
         <Link
             href={href}
