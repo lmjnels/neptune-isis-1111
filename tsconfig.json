@@ -23,8 +23,11 @@
             "@/*": ["/*"],
             "@/Container/*": ["Container/*"],
             "@/Components/*": ["Components/*"],
+            "@/Data/*": ["data/*"],
+            "@/Hooks/*": ["Hooks/*"],
             "@/Images/*": ["Images/*"],
-            "@/Layouts/*": ["Layouts/*"]
+            "@/Layouts/*": ["Layouts/*"],
+            "@/Libs/*": ["libs/*"],
         }
     },
     "include": ["./resources/js/*"],
