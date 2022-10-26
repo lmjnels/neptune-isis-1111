@@ -1,0 +1,162 @@
+.section {
+    width: 100%;
+    margin-bottom: 100px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.section.fullscreen {
+    height: 100%;
+    margin-bottom: 0;
+}
+
+@media only screen and (min-width: 576px) {
+    .wrapper {
+        max-width: 90%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .wrapper {
+        max-width: 90%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .wrapper {
+        max-width: 1014px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .wrapper {
+        max-width: 1274px;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 100px;
+}
+
+.wrapper-full {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.no-gap {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.no-margin {
+    margin-bottom: 0!important;
+}
+
+.fs-fraction {
+    display: block;
+    position: absolute;
+    left: 8.5%;
+    top: 29.5%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.fs-button, .fs-meta, .fs-fraction {
+    overflow: hidden;
+}
+
+.fs-fraction span {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -.06em;
+    font-size: 15px;
+    color: rgba(25,27,29,.6);
+    display: block;
+}
+
+.fs-tit-char>span, .fs-button>span, .fs-meta>span, .fs-fraction>span {
+    display: block;
+}
+
+.fs-project {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    z-index: 2;
+    pointer-events: none;
+}
+.fs-project.active {
+    visibility: visible;
+}
+.fs-project-dets {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: block;
+    width: 40%;
+    left: 15%;
+}
+
+.fs-title {
+    font-size: 110px;
+    font-weight: 700;
+    letter-spacing: -.06em;
+    margin-bottom: 100px;
+    line-height: 115px;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+.fs-button, .fs-meta, .fs-fraction {
+    overflow: hidden;
+}
+
+.fs-meta {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.fs-button {
+    position: absolute;
+    right: 20%;
+    top: 32%;
+    display: block;
+    pointer-events: all;
+}
+
+.fs-meta span {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -.06em;
+    color: rgba(25,27,29,.6);
+    line-height: 25px;
+}
+
+span.fs-year::before {
+    content: "/";
+    margin: 0 5px;
+}
+
+.fs-tit-char>span, .fs-button>span, .fs-meta>span, .fs-fraction>span {
+    display: block;
+}
+
+.fs-button a {
+    text-decoration: none;
+    color: #191b1d;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -.05em;
+    position: relative;
+    display: block;
+}
