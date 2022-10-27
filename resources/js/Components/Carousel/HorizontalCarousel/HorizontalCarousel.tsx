@@ -39,12 +39,12 @@ export default function HorizontalCarousel({slides}: HorizontalCarouselProps) {
 
     const progressIndicator = useRef<any>(null);
 
+    // @todo add scroll js events
+    const scrollNotice = useRef<any>(null);
+    const scrollLine = useRef<any>(null);
 
     const animateCarouselSlides = () => {
         let widthCalc = (wrapper.current.offsetWidth - window.outerWidth + 350)
-        // let widthCalc = (wrapper.current.offsetWidth - window.outerWidth + 450)
-
-        console.log('widthCalc', widthCalc)
 
         const csw = gsap.fromTo(wrapper.current, {
                 x: wrapFirstTrans
@@ -141,13 +141,9 @@ export default function HorizontalCarousel({slides}: HorizontalCarouselProps) {
 
             title.current[i].classList.add('title_' + idx);
 
-
             projectTitleContainer.appendChild(projectTitleWrapper);
 
-
             projectTitleWrapper.appendChild(title.current[i]);
-
-
         });
 
         let totProj = project.current.length;
@@ -163,10 +159,10 @@ export default function HorizontalCarousel({slides}: HorizontalCarouselProps) {
         if (tabletQuery.matches)
             transVal = totProj * 200 - 200
 
-        gsap.to(`.${titleWrapperClassName}`, {
+        gsap.to('.cas-titles-wrap', {
             y: `-${transVal}`,
             scrollTrigger: {
-                trigger: carouselShowcase.current,
+                trigger: '.carousel-showcase',
                 scrub: 1,
                 start: 'top top',
                 end: 'bottom+=3000 top',
@@ -344,7 +340,7 @@ export default function HorizontalCarousel({slides}: HorizontalCarouselProps) {
             </div>
             <div className="showcase-footer">
                 <div className="showcase-footer-left">
-                    <div className="scroll-notice" data-target="#secondSec">
+                    <div className="scroll-notice" data-target="#secondSec" ref={scrollNotice}>
                         <span className="sn_bef"></span>
                         <span>SCROLL</span>
                     </div>
