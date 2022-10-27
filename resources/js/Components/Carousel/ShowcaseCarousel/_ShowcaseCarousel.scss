@@ -1,0 +1,115 @@
+.portfolio-showcase.carousel-showcase {
+    width: 100%;
+    height: 100vh;
+
+    position: fixed;
+}
+
+.cas-bg-text {
+    font-size: 200px;
+    font-weight: 700;
+    letter-spacing: -.07em;
+    position: fixed;
+    top: 10%;
+    left: 0;
+    white-space: nowrap;
+    opacity: .02;
+}
+
+.cas-headline {
+    position: absolute;
+    top: 50%;
+    left: 8.5%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    max-width: 80vw;
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: -.06em;
+    line-height: 75px;
+    padding-left: 5%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.cas-headline .cas-line {
+    overflow: hidden;
+    padding-right: 6px;
+}
+
+.cas-project-wrapper {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+}
+
+.cas-project {
+    display: block;
+    margin-right: 300px;
+    width: 50vw;
+    position: relative;
+    height: 50vh;
+}
+
+@media (min-width: 450px) and (max-width: 900px){
+    .cas-project {
+        width: 75vw;
+        height: 70vh;
+    }
+}
+
+.cs-image {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+.cas-titles {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    text-align: center;
+    height: 250px;
+    overflow: hidden;
+}
+
+.cas-titles .cas-titles-wrap {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translateY(250px);
+    -ms-transform: translateY(250px);
+    transform: translateY(250px);
+}
+
+.cas-titles .cs-title {
+    font-size: 150px;
+    font-weight: 700;
+    letter-spacing: -.06em;
+    white-space: nowrap;
+    padding: 50px 0;
+}
+
+@media (min-width: 450px) and (max-width: 900px) {
+    .cas-titles .cs-title {
+        font-size: 100px;
+    }
+}

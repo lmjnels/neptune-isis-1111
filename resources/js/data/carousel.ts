@@ -17,7 +17,7 @@ export type CarouselSlide = {
 export const carouselShowcase: CarouselSlide[] = [
     {
         name: 'Web Design',
-        video: project5,
+        video: '586727575',
         link: '#',
         category: 'Production',
         media: 'video',

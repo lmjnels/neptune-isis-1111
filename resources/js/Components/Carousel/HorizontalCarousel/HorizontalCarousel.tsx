@@ -5,6 +5,7 @@ import SplitText from 'gsap/SplitText'
 import './_HorizontalCarousel.scss'
 import Section from "../../Section";
 import {CarouselSlide} from "../../../data/carousel";
+import Plyr from "plyr";
 
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollTrigger);
@@ -261,6 +262,29 @@ export default function HorizontalCarousel({slides}: HorizontalCarouselProps) {
 
         showcaseOpenings();
 
+        const vid = '.showcase-video';
+
+        const elm = document.querySelector(vid);
+
+        const videoOptions: Plyr.Options = {
+            // controls: false,
+            autoplay: true,
+            clickToPlay: false,
+            muted: true,
+            autopause: false,
+            volume: 0,
+            loop: {
+                active: true
+            },
+            vimeo: { transparent: true },
+            ratio: '16:9',
+            displayDuration: false,
+        };
+
+        if(elm){
+            new Plyr(vid, videoOptions);
+        }
+
 
     }, []);
 
@@ -287,7 +311,8 @@ export default function HorizontalCarousel({slides}: HorizontalCarouselProps) {
                                              data-plyr-provider={slide.provider}
                                              data-plyr-embed-id={slide.video}
                                              ref={(el) => (projectImage.current[idx] = el)}
-                                        ></div>
+                                        >
+                                        </div>
                                     )}
 
                                     {slide.media === 'image' && slide.image !== undefined && (
