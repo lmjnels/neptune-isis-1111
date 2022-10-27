@@ -9,7 +9,6 @@
         "build": "vite build && vite build --ssr"
     },
     "devDependencies": {
-        "@gsap/business": "^3.11.3",
         "@headlessui/react": "^1.7.3",
         "@heroicons/react": "^2.0.12",
         "@inertiajs/inertia": "^0.11.0",
@@ -24,7 +23,7 @@
         "alpinejs": "^3.4.2",
         "autoprefixer": "^10.4.2",
         "axios": "^0.27",
-        "gsap": "npm:@gsap/business@^3.11.3",
+        "gsap": "^3.11.3",
         "laravel-vite-plugin": "^0.6.0",
         "lodash": "^4.17.19",
         "plyr": "^3.7.2",
