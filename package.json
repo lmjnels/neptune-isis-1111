@@ -1,5 +1,9 @@
 {
     "private": true,
+    "engines": {
+        "node": ">=17.7.2",
+        "npm": ">=8.8.0"
+    },
     "scripts": {
         "dev": "vite",
         "build": "vite build && vite build --ssr"
