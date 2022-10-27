@@ -1,14 +1,15 @@
 {
     "private": true,
     "engines": {
-        "node": ">=17.7.2",
-        "npm": ">=8.8.0"
+        "node": ">=16.14.0",
+        "npm": ">=8.3.1"
     },
     "scripts": {
         "dev": "vite",
         "build": "vite build && vite build --ssr"
     },
     "devDependencies": {
+        "@gsap/business": "^3.11.3",
         "@headlessui/react": "^1.7.3",
         "@heroicons/react": "^2.0.12",
         "@inertiajs/inertia": "^0.11.0",
@@ -26,6 +27,8 @@
         "gsap": "npm:@gsap/business@^3.11.3",
         "laravel-vite-plugin": "^0.6.0",
         "lodash": "^4.17.19",
+        "plyr": "^3.7.2",
+        "plyr-react": "^5.1.0",
         "postcss": "^8.4.6",
         "prop-types": "^15.8.1",
         "react": "^18.2.0",
@@ -35,9 +38,5 @@
         "ts-loader": "^9.4.1",
         "typescript": "^4.8.4",
         "vite": "^3.0.0"
-    },
-    "dependencies": {
-        "plyr": "^3.7.2",
-        "plyr-react": "^5.1.0"
     }
 }
