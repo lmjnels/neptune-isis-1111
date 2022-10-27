@@ -47,6 +47,12 @@
     margin-bottom: 100px;
 }
 
+.wrapper:after, .wrapper-small:after, .wrapper-full:after, section:after {
+    display: table;
+    clear: both;
+    content: '';
+}
+
 .no-gap {
     padding-left: 0;
     padding-right: 0;
