@@ -15,14 +15,14 @@ export type CarouselSlide = {
 }
 
 export const carouselShowcase: CarouselSlide[] = [
-    {
-        name: 'Web Design',
-        video: '586727575',
-        link: '#',
-        category: 'Production',
-        media: 'video',
-        provider: 'vimeo',
-    },
+    // {
+    //     name: 'Web Design',
+    //     video: '586727575',
+    //     link: '#',
+    //     category: 'Production',
+    //     media: 'video',
+    //     provider: 'vimeo',
+    // },
     {
         name: 'Web Design',
         image: project5,
