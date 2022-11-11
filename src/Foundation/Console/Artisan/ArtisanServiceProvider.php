@@ -7,6 +7,7 @@ final class ArtisanServiceProvider extends \Illuminate\Foundation\Providers\Arti
 
     private array $customCommands = [
         'ModelMake' => ModelMakeCommand::class,
+        'RequestMake' => RequestMakeCommand::class,
         'TestMake' => TestMakeCommand::class,
     ];
 
