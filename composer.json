@@ -30,7 +30,8 @@
             "App\\": "app/",
             "Foundation\\": "src/Foundation/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "DesignPatterns\\": "src/DesignPatterns/"
         }
     },
     "autoload-dev": {
