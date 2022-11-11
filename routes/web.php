@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('Breeze/Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 require_once __DIR__.'/auth.php';
