@@ -1,0 +1,20 @@
+<?php
+
+namespace DummyNamespace;
+
+use Foundation\Repository\BaseRepository;
+
+/**
+ * Class DummyClass.
+ */
+class DummyClass extends BaseRepository
+{
+    /**
+     * Returns model
+     * @return \Illuminate\Database\Eloquent\Model|string;
+     */
+    public function model()
+    {
+        return Model::class;
+    }
+}
